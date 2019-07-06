@@ -24,6 +24,7 @@ class App extends React.Component{
     render(){
         return (
             <div className="App">
+                Game Of Life
                 <header className="App-header">
                     <Filter onChange = {this.handleChange}/>
                     <br/>

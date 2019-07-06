@@ -1,0 +1,14 @@
+.Filter input{
+    background-color: #282c34;
+    color: white;
+    outline: 0;
+    border-width: 0 0 1px;
+    border-radius: 2px;
+    border-color: white;
+}
+
+.Filter{
+    float: left;
+    margin-right: 180px;
+    margin-left: 10px;
+}
