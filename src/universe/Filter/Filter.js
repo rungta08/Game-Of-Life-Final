@@ -13,7 +13,14 @@ class Filter extends Component {
                         onChange = {this.changeSize}/>
                 <br/>
                 <br/>
-
+                <label>Generations: </label><input id = 'generation-input'
+                                                   type = 'number'
+                                                   min={0}
+                                                   max={20}
+                                                   defaultValue={10}
+                                                   onChange = {this.changeGeneration}/>
+                <br/>
+                <br/>
             </div>
         );
     }
