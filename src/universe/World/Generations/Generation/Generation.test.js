@@ -11,5 +11,10 @@ describe('Generation', () => {
         expect(cellElement.length).toEqual(1);
     });
 
+    it('should create multiple cell', () => {
+        const generationElement = shallow(<Generation/>);
+        const cellElement = generationElement.find(Cell);
 
+        expect(cellElement.length).toEqual(2);
+    });
 });
