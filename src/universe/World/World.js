@@ -24,8 +24,6 @@ class World extends React.Component {
 
         this.setState({
             aliveCells: aliveCells
-        },() => {
-            console.log(this.state.aliveCells)
         })
     }
 

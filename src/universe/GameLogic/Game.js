@@ -1,10 +1,10 @@
 const createGeneration = (generation, aliveRules) => {
     let newGeneration = [];
     for(let index = 0;index < generation.length;index++){
-        let leftneighbour = index-1 === -1? generation[generation.length-1] : generation[index-1];
-        let rightneighbour = index+1 === generation.length? generation[0] : generation[index+1];
+        let leftNeighbour = index-1 === -1? generation[generation.length-1] : generation[index-1];
+        let rightNeighbour = index+1 === generation.length? generation[0] : generation[index+1];
 
-        let neighbour = leftneighbour.toString()+generation[index].toString()+rightneighbour.toString();
+        let neighbour = leftNeighbour.toString()+generation[index].toString()+rightNeighbour.toString();
 
         if(aliveRules.includes(neighbour)){
             newGeneration.push(1);
