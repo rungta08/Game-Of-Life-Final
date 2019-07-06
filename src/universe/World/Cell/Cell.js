@@ -13,7 +13,6 @@ class Cell extends Component {
     }
 
     colorChange = () => {
-        this.props.onClick(this.props.id);
         let bgColor = 'aqua';
         if(this.state.bgColor === 'aqua'){
             bgColor = 'white'
