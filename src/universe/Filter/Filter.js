@@ -2,6 +2,54 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 class Filter extends Component {
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+            size:10,
+            generation: 10,
+            aliveRules: ['001','010']
+        }
+    }
+
+    handleChange = (event) => {
+        const option = event.target.value;
+        let aliveRules = this.state.aliveRules;
+        if(aliveRules.includes(option)){
+            let index = aliveRules.indexOf(option);
+            aliveRules.splice(index, 1);
+        }
+        else{
+            aliveRules.push(option);
+        }
+        this.setState({
+            aliveRules: aliveRules
+        },()=>{
+            this.props.onChange(this.state.size, this.state.generation, this.state.aliveRules)
+        })
+
+    };
+
+    changeSize = (event) => {
+        const size = event.target.value;
+        this.setState({
+            size: size
+        }, () => {
+            this.props.onChange(this.state.size, this.state.generation, this.state.aliveRules)
+        })
+    };
+
+    changeGeneration = (event) => {
+        const generation = event.target.value;
+        this.setState({
+            generation: generation
+        }, () => {
+            this.props.onChange(this.state.size, this.state.generation, this.state.aliveRules)
+        })
+
+    };
+
     render() {
         return (
             <div className="Filter">
