@@ -4,7 +4,7 @@ import Cell from './Cell/Cell';
 function Generation(props){
     return(
         <div className='Generation'>
-            <Cell/>
+            <Cell cell = {0}/>
         </div>
     )
 }
