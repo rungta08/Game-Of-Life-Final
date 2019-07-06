@@ -54,7 +54,7 @@ class World extends React.Component {
                 </div>
                 <br/>
                 Generations:
-                <Generations/>
+                <Generations generations = {[[1,2],[1,2]]}/>
             </div>
         );
     }
