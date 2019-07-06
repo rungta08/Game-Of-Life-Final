@@ -10,7 +10,7 @@ class World extends React.Component {
     render() {
         let cells = [];
         for(let i = 0; i < this.props.size;i++){
-            cells.push(<Cell/>)
+            cells.push(<Cell key = {i}/>)
         }
         return (
             <div>

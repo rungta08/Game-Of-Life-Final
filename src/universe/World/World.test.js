@@ -13,5 +13,11 @@ describe('World', () => {
         const worldElement = shallow(<World size = {2}/>);
         expect(worldElement.find(Cell).length).toEqual(2)
     });
+
+    it('should make cell index active if Particular Cell Clicked', () => {
+        const worldElement = shallow(<World size = {2}/>);
+        const cellElement = worldElement.find(Cell).get(0);
+        cellElement.simulate('click');
+    });
 });
 

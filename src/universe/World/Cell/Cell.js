@@ -19,8 +19,6 @@ class Cell extends Component {
         }
         this.setState({
             bgColor: bgColor
-        }, () => {
-            console.log(this.state.bgColor);
         })
     };
 
