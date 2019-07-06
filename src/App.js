@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
           <Filter/>
-          <World/>
+          <World size = {2}/>
       </header>
     </div>
   );
