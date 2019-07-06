@@ -4,29 +4,28 @@ import './Filter.css';
 
 class Filter extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
-            size:10,
+            size: 10,
             generation: 10,
-            aliveRules: ['001','010']
+            aliveRules: ['001', '010']
         }
     }
 
     handleChange = (event) => {
         const option = event.target.value;
         let aliveRules = this.state.aliveRules;
-        if(aliveRules.includes(option)){
+        if (aliveRules.includes(option)) {
             let index = aliveRules.indexOf(option);
             aliveRules.splice(index, 1);
-        }
-        else{
+        } else {
             aliveRules.push(option);
         }
         this.setState({
             aliveRules: aliveRules
-        },()=>{
+        }, () => {
             this.props.onChange(this.state.size, this.state.generation, this.state.aliveRules)
         })
 
@@ -53,25 +52,27 @@ class Filter extends Component {
 
     restrict = (e) => {
         e.preventDefault();
-    }
+    };
 
     render() {
         return (
             <div className="Filter">
                 <label>Size: </label><input id='size-input'
-                        type = 'number'
-                        min={0}
-                        max={20}
-                        defaultValue={10}
-                        onChange = {this.changeSize} onKeyDown={this.restrict} onKeyUp={this.restrict}/>
+                                            type='number'
+                                            min={0}
+                                            max={20}
+                                            defaultValue={10}
+                                            onChange={this.changeSize} onKeyDown={this.restrict}
+                                            onKeyUp={this.restrict}/>
                 <br/>
                 <br/>
-                <label>Generations: </label><input id = 'generation-input'
-                                                   type = 'number'
+                <label>Generations: </label><input id='generation-input'
+                                                   type='number'
                                                    min={0}
                                                    max={20}
                                                    defaultValue={10}
-                                                   onChange = {this.changeGeneration} onKeyDown={this.restrict} onKeyUp={this.restrict}/>
+                                                   onChange={this.changeGeneration} onKeyDown={this.restrict}
+                                                   onKeyUp={this.restrict}/>
                 <br/>
                 <br/>
                 <div>Alive Rules</div>

@@ -2,11 +2,11 @@ import React from 'react';
 import './Cell.css'
 import PropTypes from 'prop-types';
 
-function Cell(props){
+function Cell(props) {
 
-    let bgColor = props.cell === 0?'aqua':'white';
+    let bgColor = props.cell === 0 ? 'aqua' : 'white';
 
-    return(
+    return (
         <div className='Gen-Cell' style={{background: bgColor}}>
 
         </div>
@@ -15,6 +15,6 @@ function Cell(props){
 
 Cell.propTypes = {
     cell: PropTypes.number
-}
+};
 
 export default Cell;

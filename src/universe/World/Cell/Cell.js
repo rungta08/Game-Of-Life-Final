@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 class Cell extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -15,7 +15,7 @@ class Cell extends Component {
     colorChange = () => {
         this.props.onClick(this.props.id);
         let bgColor = 'aqua';
-        if(this.state.bgColor === 'aqua'){
+        if (this.state.bgColor === 'aqua') {
             bgColor = 'white'
         }
         this.setState({
@@ -25,7 +25,7 @@ class Cell extends Component {
 
     render() {
         return (
-            <div style = {{background: this.state.bgColor}} className='cell' onClick = {this.colorChange}>
+            <div style={{background: this.state.bgColor}} className='cell' onClick={this.colorChange}>
 
             </div>
         );
@@ -33,7 +33,7 @@ class Cell extends Component {
 }
 
 Cell.propTypes = {
-    id:PropTypes.number,
+    id: PropTypes.number,
     onClick: PropTypes.func
 };
 

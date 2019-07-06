@@ -5,7 +5,7 @@ import Generations from "./Generations/Generations";
 import Game from '../GameLogic/Game'
 
 class World extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             aliveCells: Array(this.props.size).fill(0),
@@ -14,10 +14,10 @@ class World extends React.Component {
 
     componentWillReceiveProps(nextProps, nextContext) {
         let aliveCells = this.state.aliveCells;
-        if(parseInt(nextProps.size) > this.state.aliveCells.length){
+        if (parseInt(nextProps.size) > this.state.aliveCells.length) {
             aliveCells.push(0);
         }
-        if(parseInt(nextProps.size) < this.state.aliveCells.length){
+        if (parseInt(nextProps.size) < this.state.aliveCells.length) {
             aliveCells.pop();
         }
 
@@ -27,7 +27,7 @@ class World extends React.Component {
     }
 
     reverse = (value) => {
-        if(value === 0)
+        if (value === 0)
             return 1;
         return 0;
     };
@@ -36,14 +36,14 @@ class World extends React.Component {
         let aliveCells = this.state.aliveCells;
         aliveCells[id] = this.reverse(aliveCells[id]);
         this.setState({
-            aliveCells : aliveCells
+            aliveCells: aliveCells
         });
     };
 
     render() {
         let cells = [];
-        for(let i = 0; i < this.props.size;i++){
-            cells.push(<Cell key = {i} id = {i} onClick={this.addToLiveCells}/>)
+        for (let i = 0; i < this.props.size; i++) {
+            cells.push(<Cell key={i} id={i} onClick={this.addToLiveCells}/>)
         }
         return (
             <div>
@@ -52,7 +52,8 @@ class World extends React.Component {
                 </div>
                 <br/>
                 Generations:
-                <Generations generations = {Game(this.state.aliveCells,this.props.numberOfGeneration,this.props.aliveRules)}/>
+                <Generations
+                    generations={Game(this.state.aliveCells, this.props.numberOfGeneration, this.props.aliveRules)}/>
             </div>
         );
     }
