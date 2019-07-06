@@ -18,8 +18,6 @@ class App extends React.Component{
             size: size,
             numberOfGeneration: generation,
             aliveRules: aliveRules
-        }, ()=>{
-            console.log(this.state.size,this.state.numberOfGeneration, this.state.aliveRules);
         })
     };
 
@@ -28,7 +26,8 @@ class App extends React.Component{
             <div className="App">
                 <header className="App-header">
                     <Filter onChange = {this.handleChange}/>
-                    <World size = {2}
+                    <br/>
+                    <World size = {this.state.size}
                            numberOfGeneration = {this.state.numberOfGeneration}
                            aliveRule = {this.state.aliveRules}/>
                 </header>

@@ -4,7 +4,6 @@ import App from './App';
 import {shallow} from "enzyme";
 import World from './universe/World/World';
 import Filter from './universe/Filter/Filter'
-import Cell from "./universe/World/Cell/Cell";
 
 
 describe('App', () => {
