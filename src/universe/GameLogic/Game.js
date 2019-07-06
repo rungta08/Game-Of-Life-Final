@@ -12,8 +12,8 @@ const createGeneration = (generation, aliveRules) => {
 };
 
 const findNeighbour = (generation, index) => {
-    let leftNeighbour = index - 1 === -1 ? generation[generation.length - 1] : generation[index - 1];
-    let rightNeighbour = index + 1 === generation.length ? generation[0] : generation[index + 1];
+    let leftNeighbour = generation[(index-1%generation.length+generation.length)%generation.length];
+    let rightNeighbour = generation[(index+1)%generation.length];
 
     return leftNeighbour.toString() + generation[index].toString() + rightNeighbour.toString();
 
