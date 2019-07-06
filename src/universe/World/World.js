@@ -53,13 +53,17 @@ class World extends React.Component {
                 </div>
                 <br/>
                 Generations:
-                <Generations generations = {Game(this.state.aliveCells,this.props.numberOfGeneration,this.props.aliveRule)}/>
+                <Generations generations = {Game(this.state.aliveCells,this.props.numberOfGeneration,this.props.aliveRules)}/>
             </div>
         );
     }
 }
 
 export default World;
-World.propTypes = {};
+World.propTypes = {
+    size: PropTypes.number,
+    numberOfGeneration: PropTypes.number,
+    aliveRules: PropTypes.array
+};
 
 

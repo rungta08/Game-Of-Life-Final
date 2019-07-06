@@ -5,7 +5,7 @@ import Cell from './Cell';
 describe('Cell', () => {
     it('should call color change when clicked', async () => {
         const colorChange = jest.fn();
-        const cellElement = shallow(<Cell/>);
+        const cellElement = shallow(<Cell onClick={colorChange}/>);
         const divElement = cellElement.find('div');
 
         divElement.simulate('click');

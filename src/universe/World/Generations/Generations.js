@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Generation from "./Generation/Generation";
 
 function Generations(props){
@@ -9,6 +10,10 @@ function Generations(props){
             )}
         </div>
     )
+}
+
+Generations.propTypes = {
+    generations: PropTypes.array
 }
 
 export default Generations;

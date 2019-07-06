@@ -1,5 +1,6 @@
 import React from 'react';
 import './Cell.css'
+import PropTypes from 'prop-types';
 
 function Cell(props){
 
@@ -10,6 +11,10 @@ function Cell(props){
 
         </div>
     )
+}
+
+Cell.propTypes = {
+    cell: PropTypes.number
 }
 
 export default Cell;

@@ -1,6 +1,7 @@
 import React from 'react';
 import Cell from './Cell/Cell';
 import './Generation.css'
+import PropTypes from 'prop-types';
 
 function Generation(props){
     return(
@@ -12,4 +13,7 @@ function Generation(props){
     )
 }
 
+Generation.propTypes ={
+    generation: PropTypes.array
+}
 export default Generation;

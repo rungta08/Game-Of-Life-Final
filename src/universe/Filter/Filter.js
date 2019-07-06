@@ -87,6 +87,8 @@ class Filter extends Component {
     }
 }
 
-Filter.propTypes = {};
+Filter.propTypes = {
+    onChange: PropTypes.func,
+};
 
 export default Filter;
