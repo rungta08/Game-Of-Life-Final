@@ -4,6 +4,7 @@ import App from './App';
 import {shallow} from "enzyme";
 import World from './universe/World/World';
 import Filter from './universe/Filter/Filter'
+import Cell from "./universe/World/Cell/Cell";
 
 
 describe('App', () => {
@@ -22,6 +23,7 @@ describe('App', () => {
     const appElement = shallow(<App/>);
     expect(appElement.find(Filter).length).toEqual(1);
   });
+
 });
 
 
