@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Cell from "./Cell/Cell";
 import './World.css';
 import Generations from "./Generations/Generations";
@@ -60,9 +59,5 @@ class World extends React.Component {
 }
 
 export default World;
-World.propTypes = {
-    size: PropTypes.number,
-    numberOfGeneration: PropTypes.number,
-};
 
 

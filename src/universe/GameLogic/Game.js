@@ -1,11 +1,7 @@
 const createGeneration = (generation, aliveRules) => {
     let newGeneration = [];
     for(let index = 0;index < generation.length;index++){
-        let leftNeighbour = index-1 === -1? generation[generation.length-1] : generation[index-1];
-        let rightNeighbour = index+1 === generation.length? generation[0] : generation[index+1];
-
-        let neighbour = leftNeighbour.toString()+generation[index].toString()+rightNeighbour.toString();
-
+        let neighbour = findNeighbour(generation, index);
         if(aliveRules.includes(neighbour)){
             newGeneration.push(1);
         }
@@ -13,9 +9,17 @@ const createGeneration = (generation, aliveRules) => {
             newGeneration.push(0);
         }
     }
-
     return newGeneration;
 };
+
+const findNeighbour = (generation, index) => {
+    let leftNeighbour = index-1 === -1? generation[generation.length-1] : generation[index-1];
+    let rightNeighbour = index+1 === generation.length? generation[0] : generation[index+1];
+
+    let neighbour = leftNeighbour.toString()+generation[index].toString()+rightNeighbour.toString();
+    return neighbour;
+
+}
 
 const Game = (aliveCells, numberOfGenerations, aliveRules) => {
     let generations = [createGeneration(aliveCells,aliveRules)];
