@@ -7,6 +7,7 @@ describe('Cell', () => {
         const colorChange = jest.fn();
         const cellElement = shallow(<Cell/>);
         const divElement = cellElement.find('div');
+
         divElement.simulate('click');
 
         expect(divElement.props().style.background).toEqual('aqua');

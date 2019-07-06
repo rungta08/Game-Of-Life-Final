@@ -6,11 +6,14 @@ import './World.css';
 class World extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            aliveCells: Array(this.props.size).fill(0),
+        }
     }
     render() {
         let cells = [];
         for(let i = 0; i < this.props.size;i++){
-            cells.push(<Cell key = {i}/>)
+            cells.push(<Cell key = {i} id = {i} onClick={this.addToLiveCells}/>)
         }
         return (
             <div>

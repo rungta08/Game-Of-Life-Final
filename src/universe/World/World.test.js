@@ -6,18 +6,26 @@ import Cell from "./Cell/Cell";
 describe('World', () => {
     it('should render cell', () => {
         const worldElement = shallow(<World size = {1}/>);
+
         expect(worldElement.find(Cell).length).toEqual(1);
     });
 
     it('should render cell based on size given by app component', () => {
         const worldElement = shallow(<World size = {2}/>);
+
         expect(worldElement.find(Cell).length).toEqual(2)
     });
 
     it('should make cell index active if Particular Cell Clicked', () => {
         const worldElement = shallow(<World size = {2}/>);
-        const cellElement = worldElement.find(Cell).get(0);
+        const mockedCellLive = jest.fn();
+        const cellElement = shallow(<Cell id = {2} onClick = {mockedCellLive}/>);
+
         cellElement.simulate('click');
+
+        expect(mockedCellLive).toBeCalledWith(2);
     });
+
+
 });
 
