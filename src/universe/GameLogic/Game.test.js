@@ -7,4 +7,10 @@ describe('Game', () => {
 
         expect(game).toEqual([[1,0,1,0]]);
     });
+
+    it('should give multiple generations', () => {
+        const game = Game([1,0,1,0],3,[]);
+
+        expect(game.length).toEqual(3);
+    });
 });
