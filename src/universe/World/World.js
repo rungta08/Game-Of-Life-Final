@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Cell from "./Cell/Cell";
 import './World.css';
 import Generations from "./Generations/Generations";
+import Game from '../GameLogic/Game'
 
 class World extends React.Component {
     constructor(props){
@@ -54,7 +55,7 @@ class World extends React.Component {
                 </div>
                 <br/>
                 Generations:
-                <Generations generations = {[[1,2],[1,2]]}/>
+                <Generations generations = {Game(this.state.aliveCells,this.props.numberOfGeneration,this.props.aliveRule)}/>
             </div>
         );
     }

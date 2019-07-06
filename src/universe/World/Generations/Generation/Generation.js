@@ -5,7 +5,9 @@ import './Generation.css'
 function Generation(props){
     return(
         <div className='Generation'>
-            <Cell cell = {0}/>
+            {props.generation.map((cell,index) =>
+                <Cell key={index} cell = {cell}/>
+            )}
         </div>
     )
 }
