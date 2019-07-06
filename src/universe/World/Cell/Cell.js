@@ -11,9 +11,23 @@ class Cell extends Component {
             bgColor: 'aqua'
         }
     }
+
+    colorChange = () => {
+        this.props.onClick(this.props.id);
+        let bgColor = 'aqua';
+        if(this.state.bgColor === 'aqua'){
+            bgColor = 'white'
+        }
+        this.setState({
+            bgColor: bgColor
+        }, () => {
+            console.log(this.state.bgColor);
+        })
+    };
+
     render() {
         return (
-            <div style = {{background: this.state.bgColor}} className='cell' >
+            <div style = {{background: this.state.bgColor}} className='cell' onClick = {this.colorChange}>
 
             </div>
         );
