@@ -50,6 +50,10 @@ class Filter extends Component {
 
     };
 
+    restrict = (e) => {
+        e.preventDefault();
+    }
+
     render() {
         return (
             <div className="Filter">
@@ -58,7 +62,7 @@ class Filter extends Component {
                         min={0}
                         max={20}
                         defaultValue={10}
-                        onChange = {this.changeSize}/>
+                        onChange = {this.changeSize} onKeyDown={this.restrict} onKeyUp={this.restrict}/>
                 <br/>
                 <br/>
                 <label>Generations: </label><input id = 'generation-input'
@@ -66,7 +70,7 @@ class Filter extends Component {
                                                    min={0}
                                                    max={20}
                                                    defaultValue={10}
-                                                   onChange = {this.changeGeneration}/>
+                                                   onChange = {this.changeGeneration} onKeyDown={this.restrict} onKeyUp={this.restrict}/>
                 <br/>
                 <br/>
                 <div>Alive Rules</div>
