@@ -29,7 +29,7 @@ class App extends React.Component{
                     <br/>
                     <World size = {this.state.size}
                            numberOfGeneration = {this.state.numberOfGeneration}
-                           aliveRule = {this.state.aliveRules}/>
+                           aliveRules = {this.state.aliveRules}/>
                 </header>
             </div>
         );

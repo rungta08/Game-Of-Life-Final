@@ -34,7 +34,7 @@ class World extends React.Component {
     };
 
     addToLiveCells = (id) => {
-        const aliveCells = this.state.aliveCells;
+        let aliveCells = this.state.aliveCells;
         aliveCells[id] = this.reverse(aliveCells[id]);
         this.setState({
             aliveCells : aliveCells
@@ -63,7 +63,6 @@ export default World;
 World.propTypes = {
     size: PropTypes.number,
     numberOfGeneration: PropTypes.number,
-    aliveRules: PropTypes.array
 };
 
 

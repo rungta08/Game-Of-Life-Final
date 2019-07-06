@@ -15,7 +15,7 @@ const createGeneration = (generation, aliveRules) => {
     }
 
     return newGeneration;
-}
+};
 
 const Game = (aliveCells, numberOfGenerations, aliveRules) => {
     let generations = [createGeneration(aliveCells,aliveRules)];
