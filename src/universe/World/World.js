@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Cell from "./Cell/Cell";
+import './World.css';
 
 class World extends React.Component {
     constructor(props){
@@ -9,7 +10,7 @@ class World extends React.Component {
     render() {
         let cells = [];
         for(let i = 0; i < this.props.size;i++){
-            cells.push(<Cell key={i} id={i} onClick = {this.addToLiveCells}/>)
+            cells.push(<Cell/>)
         }
         return (
             <div>
