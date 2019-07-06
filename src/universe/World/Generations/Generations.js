@@ -5,7 +5,7 @@ function Generations(props){
     return(
         <div className = 'Generations'>
             {props.generations.map((generation,index) =>
-            <Generation key = {index}/>
+            <Generation key = {index} generation ={generation}/>
             )}
         </div>
     )

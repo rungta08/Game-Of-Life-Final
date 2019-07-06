@@ -6,7 +6,7 @@ function Cell(props){
     let bgColor = props.cell === 0?'aqua':'white';
 
     return(
-        <div className='GenCell' style={{background: bgColor}}>
+        <div className='Gen-Cell' style={{background: bgColor}}>
 
         </div>
     )
