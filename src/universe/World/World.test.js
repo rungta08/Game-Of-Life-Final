@@ -2,6 +2,7 @@ import React from 'react';
 import {shallow} from "enzyme";
 import World from "./World";
 import Cell from "./Cell/Cell";
+import Generations from "./Generations/Generations";
 
 describe('World', () => {
     it('should render cell', () => {
@@ -24,6 +25,13 @@ describe('World', () => {
         cellElement.simulate('click');
 
         expect(mockedCellLive).toBeCalledWith(2);
+    });
+
+    it('should render generations', () => {
+        const worldElement = shallow(<World size = {2}/>);
+        const generationsElement = worldElement.find(Generations);
+
+        expect(generationsElement.length).toEqual(1);
     });
 
 

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Cell from "./Cell/Cell";
 import './World.css';
+import Generations from "./Generations/Generations";
 
 class World extends React.Component {
     constructor(props){
@@ -9,6 +10,22 @@ class World extends React.Component {
         this.state = {
             aliveCells: Array(this.props.size).fill(0),
         }
+    }
+
+    componentWillReceiveProps(nextProps, nextContext) {
+        let aliveCells = this.state.aliveCells;
+        if(parseInt(nextProps.size) > this.state.aliveCells.length){
+            aliveCells.push(0);
+        }
+        if(parseInt(nextProps.size) < this.state.aliveCells.length){
+            aliveCells.pop();
+        }
+
+        this.setState({
+            aliveCells: aliveCells
+        },() => {
+            console.log(this.state.aliveCells)
+        })
     }
 
     reverse = (value) => {
@@ -35,10 +52,13 @@ class World extends React.Component {
                 <div className="World">
                     {cells}
                 </div>
+                <br/>
+                Generations:
+                <Generations/>
             </div>
         );
     }
-};
+}
 
 export default World;
 World.propTypes = {};
