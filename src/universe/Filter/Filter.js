@@ -8,7 +8,7 @@ const DEFAULT_GENERATION = 10;
 const MAX_SIZE = 20;
 const MAX_GENERATION = 20;
 const MIN_SIZE = 0;
-const MIN_GENERATION = 0;
+const MIN_GENERATION = 1;
 const ONE_ELEMENT = 1;
 
 class Filter extends Component {
