@@ -2,6 +2,15 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './Filter.css';
 
+
+const DEFAULT_SIZE = 10;
+const DEFAULT_GENERATION = 10;
+const MAX_SIZE = 20;
+const MAX_GENERATION = 20;
+const MIN_SIZE = 0;
+const MIN_GENERATION = 0;
+const ONE_ELEMENT = 1;
+
 class Filter extends Component {
 
     constructor(props) {
@@ -19,7 +28,7 @@ class Filter extends Component {
         let aliveRules = this.state.aliveRules;
         if (aliveRules.includes(option)) {
             let index = aliveRules.indexOf(option);
-            aliveRules.splice(index, 1);
+            aliveRules.splice(index, ONE_ELEMENT);
         } else {
             aliveRules.push(option);
         }
@@ -59,18 +68,18 @@ class Filter extends Component {
             <div className="Filter">
                 <label>Size: </label><input id='size-input'
                                             type='number'
-                                            min={0}
-                                            max={20}
-                                            defaultValue={10}
+                                            min={MIN_SIZE}
+                                            max={MAX_SIZE}
+                                            defaultValue={DEFAULT_SIZE}
                                             onChange={this.changeSize} onKeyDown={this.restrict}
                                             onKeyUp={this.restrict}/>
                 <br/>
                 <br/>
                 <label>Generations: </label><input id='generation-input'
                                                    type='number'
-                                                   min={0}
-                                                   max={20}
-                                                   defaultValue={10}
+                                                   min={MIN_GENERATION}
+                                                   max={MAX_GENERATION}
+                                                   defaultValue={DEFAULT_GENERATION}
                                                    onChange={this.changeGeneration} onKeyDown={this.restrict}
                                                    onKeyUp={this.restrict}/>
                 <br/>

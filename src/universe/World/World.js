@@ -2,20 +2,25 @@ import React from 'react';
 import Cell from "./Cell/Cell";
 import './World.css';
 import Generations from "./Generations/Generations";
-import Game from '../GameLogic/Game'
+import Game from '../GameLogic/Game';
+
+const  ALL_DEAD = 0;
+const DEAD = 0;
+const ALIVE = 1
+const START = 0;
 
 class World extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            aliveCells: Array(this.props.size).fill(0),
+            aliveCells: Array(this.props.size).fill(ALL_DEAD),
         }
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
         let aliveCells = this.state.aliveCells;
         if (parseInt(nextProps.size) > this.state.aliveCells.length) {
-            aliveCells.push(0);
+            aliveCells.push(DEAD);
         }
         if (parseInt(nextProps.size) < this.state.aliveCells.length) {
             aliveCells.pop();
@@ -27,9 +32,9 @@ class World extends React.Component {
     }
 
     reverse = (value) => {
-        if (value === 0)
-            return 1;
-        return 0;
+        if (value === DEAD)
+            return ALIVE;
+        return DEAD;
     };
 
     addToLiveCells = (id) => {
@@ -42,7 +47,7 @@ class World extends React.Component {
 
     render() {
         let cells = [];
-        for (let i = 0; i < this.props.size; i++) {
+        for (let i = START; i < this.props.size; i++) {
             cells.push(<Cell key={i} id={i} onClick={this.addToLiveCells}/>)
         }
         return (
