@@ -6,7 +6,7 @@ const DEAD = 0;
 
 function Cell(props) {
 
-    let bgColor = props.cell === DEAD ? 'aqua' : 'white';
+    let bgColor = props.cell === DEAD ? 'aqua' : 'black';
 
     return (
         <div className='Gen-Cell' style={{background: bgColor}}>
