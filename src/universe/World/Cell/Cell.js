@@ -8,14 +8,14 @@ class Cell extends Component {
         super(props);
 
         this.state = {
-            bgColor: 'aqua'
+            bgColor: 'white'
         }
     }
 
     colorChange = () => {
         this.props.onClick(this.props.id);
-        let bgColor = 'aqua';
-        if (this.state.bgColor === 'aqua') {
+        let bgColor = 'white';
+        if (this.state.bgColor === 'white') {
             bgColor = 'black'
         }
         this.setState({
