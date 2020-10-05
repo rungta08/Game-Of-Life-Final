@@ -6,7 +6,7 @@ import './Filter.css';
 const DEFAULT_SIZE = 10;
 const DEFAULT_GENERATION = 10;
 const MAX_SIZE = 30;
-const MAX_GENERATION = 20;
+const MAX_GENERATION = 30;
 const MIN_SIZE = 0;
 const MIN_GENERATION = 1;
 const ONE_ELEMENT = 1;
